@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar.jsx";
 
 // Pages
 import { Home } from "../pages/Home.jsx";
-import Products from "../pages/Products.jsx";
+import Products from "../pages/products.jsx";
 import Turnover from "../pages/Turnover.jsx";
 import Support from "../pages/Support.jsx";
 import About from "../pages/AboutUs.jsx";
