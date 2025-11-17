@@ -16,7 +16,17 @@ const servicesOptions = [
   { id: 'competitor-tracking', label: 'Competitor Tracking', description: 'Real-time price monitoring on Amazon/Flipkart' },
   { id: 'turnover-analytics', label: 'Turnover Analytics', description: 'Profitability forecasting and reports' },
   { id: 'inventory-sync', label: 'Inventory Management', description: 'Stock tracking and alerts' },
-  { id: 'offer-calculator', label: 'Offer Calculator', description: 'Dynamic discount simulations' }
+  { id: 'offer-calculator', label: 'Offer Calculator', description: 'Dynamic discount simulations' },
+  {
+    id: 'latching',
+    label: 'Latching',
+    description: 'Seamless catalog latching and listing approvals'
+  },
+  {
+    id: 'gst-services',
+    label: 'GST Services',
+    description: 'GST filing assistance and compliance support'
+  }
 ];
 
 // Form validation schema - Client-side rules for react-hook-form

@@ -11,13 +11,12 @@ import Deepak from "../assets/Deepak3.JPG"
 
 const teamMembers = [
   {
-    name: 'Arjun Mehta',
+    name: 'Aditya Raj Singh',
     role: 'CEO & Co-founder',
-    description: 'Former Amazon executive with 12+ years in e-commerce analytics',
-    // image: 'https://i.pravatar.cc/400?u=arjun',
+    description: '4+ years of corporate Experience Core ML and AI Engineer',
     image: Aditya,
     linkedin: '#',
-    expertise: ['AI','ML','E-commerce Strategy', 'Analytics', 'Leadership'],
+    expertise: ['AI','ML','E-commerce Strategy', 'Analytics', 'Leadership', 'Business Development'],
   },
   {
     name: 'Deepak Gupta',
@@ -30,27 +29,27 @@ const teamMembers = [
   {
     name: ' Mahaan Lal Srivastav',
     role: 'DevOps Head & Co-founder',
-    description: 'Full-stack architect with expertise in distributed systems and data infrastructure',
+    description: 'Full-stack developer with expertise in distributed systems and data infrastructure',
     image: 'https://i.pravatar.cc/400?u=priya2',
     linkedin: '#',
-    expertise: ['System Architecture', 'DevOps', 'Data Engineering', 'Scalability'],
+    expertise: ['FullStack Developer', 'DevOps', 'Cloud', 'Scalability'],
   },
-  // {
-  //   name: 'Vikash Kumar',
-  //   role: 'Head of Product',
-  //   description: 'Product visionary with experience at Flipkart and Paytm',
-  //   image: 'https://i.pravatar.cc/400?u=vikash1',
-  //   linkedin: '#',
-  //   expertise: ['Product Strategy', 'UX Design', 'Growth'],
-  // },
-  // {
-  //   name: 'Sneha Gupta',
-  //   role: 'VP of Engineering',
-  //   description: 'Full-stack architect with expertise in distributed systems',
-  //   image: 'https://i.pravatar.cc/400?u=sneha1',
-  //   linkedin: '#',
-  //   expertise: ['System Architecture', 'Cloud Computing', 'DevOps'],
-  // },
+  {
+    name: 'Shivraj Singh',
+    role: 'Microservices & Architecture Head',
+    description: '',
+    image: 'https://i.pravatar.cc/400?u=vikash1',
+    linkedin: '#',
+    expertise: ['Product Strategy', 'Microservices','System Design','Architecture ', 'Growth'],
+  },
+  {
+    name: 'Priyanshi ',
+    role: 'FullStack Developer',
+    description: 'Full-stack architect with expertise in distributed systems',
+    image: 'https://i.pravatar.cc/400?u=sneha1',
+    linkedin: '#',
+    expertise: ['FullStack Developer', 'Cloud Computing', 'DevOps'],
+  },
   // {
   //   name: 'Rohit Agarwal',
   //   role: 'Head of Business Development',
