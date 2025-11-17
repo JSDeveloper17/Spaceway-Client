@@ -33,7 +33,7 @@ const teamMembers = [
     description: 'Full-stack architect with expertise in distributed systems and data infrastructure',
     image: 'https://i.pravatar.cc/400?u=priya2',
     linkedin: '#',
-    expertise: ['Machine Learning', 'Data Engineering', 'Scalability'],
+    expertise: ['System Architecture', 'DevOps', 'Data Engineering', 'Scalability'],
   },
   // {
   //   name: 'Vikash Kumar',

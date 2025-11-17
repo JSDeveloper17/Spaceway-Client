@@ -1,50 +1,42 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import Button from './ui/Button'
 import AppIcon from './AppIcon'
 import AppImage from './AppImage'
 import { cn } from '../utils/cn'
 import { Link } from 'react-router-dom'
 
-const TrustSignalsSection = () => {
-  const marketplaceIntegrations = [
-    {
-      name: 'Amazon',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_12240984b-1761929731680.png",
-      logoAlt: 'Amazon marketplace logo in orange and black colors',
-      status: 'Certified Partner'
-    },
-    {
-      name: 'Flipkart',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_161f3802d-1761929733270.png",
-      logoAlt: 'Flipkart marketplace logo in blue and yellow colors',
-      status: 'Verified Integration'
-    },
-    {
-      name: 'Myntra',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_1c4c42a28-1761929734208.png",
-      logoAlt: 'Myntra fashion marketplace logo in red and white colors',
-      status: 'API Partner'
-    },
-    {
-      name: 'Shopify',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_12c1c7d9c-1761929736047.png",
-      logoAlt: 'Shopify e-commerce platform logo in green and white colors',
-      status: 'App Store Listed'
-    },
-    {
-      name: 'WooCommerce',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_122ad5639-1761929735107.png",
-      logoAlt: 'WooCommerce plugin logo in purple and white colors',
-      status: 'Plugin Available'
-    },
-    {
-      name: 'Magento',
-      logo: "https://img.rocket.new/generatedImages/rocket_gen_img_1e432e886-1761929732852.png",
-      logoAlt: 'Magento e-commerce platform logo in orange and black colors',
-      status: 'Extension Ready'
-    }
-  ]
+import AmazonLogo from '../assets/Logos/Amazon.jpg'
+import FlipkartLogo from '../assets/Logos/Flipkart.png'
+import MyntraLogo from '../assets/Logos/Myntra.png'
+import ShopifyLogo from '../assets/Logos/Shopify.jpg'
+import WooLogo from '../assets/Logos/WooCommerce.png'
+import MagentoLogo from '../assets/Logos/Magento.avif'
 
+const logos = [
+  { name: 'Amazon', src: AmazonLogo, alt: 'Amazon logo', status: "Certified Partner" },
+  { name: 'Flipkart', src: FlipkartLogo, alt: 'Flipkart logo', status: "Verified Integration" },
+  { name: 'Myntra', src: MyntraLogo, alt: 'Myntra logo', status: "API Partner" },
+  { name: 'Shopify', src: ShopifyLogo, alt: 'Shopify logo', status: "App Store Listed" },
+  { name: 'WooCommerce', src: WooLogo, alt: 'WooCommerce logo', status: "Plugin Available" },
+  { name: 'Magento', src: MagentoLogo, alt: 'Magento logo', status: "Extension Ready" },
+]
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+}
+const item = {
+  hidden: { opacity: 0, y: 10, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', damping: 16, stiffness: 120 } },
+}
+
+const TrustSignalsSection = () => {
+  
   const securityCertifications = [
     {
       icon: 'shield',
@@ -155,43 +147,116 @@ const TrustSignalsSection = () => {
         </div>
 
         {/* Marketplace Integrations */}
-        <div className="mb-12 sm:mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        {/* <div className="mb-12 sm:mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <h3 className="mb-6 text-xl font-semibold text-center sm:text-2xl lg:text-3xl text-foreground sm:mb-8">
             Seamless Marketplace Integrations
           </h3>
-          
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 sm:gap-6">
-            {marketplaceIntegrations.map((marketplace, index) => (
-              <div 
-                key={index} 
+        </div> */}
+
+     <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="mb-12 sm:mb-16"
+    >
+      {/* heading (optional small subtitle above logos) */}
+      <div className="mb-6 text-center">
+        <h3 className="text-lg font-semibold sm:text-xl lg:text-2xl text-foreground">
+          Seamless Marketplace Integrations
+        </h3>
+        <p className="max-w-2xl mx-auto mt-2 text-sm text-muted-foreground">
+          One-click integrations with major marketplaces and storefronts. Native apps & connectors.
+        </p>
+      </div>
+
+      {/* Grid for md+, horizontal scroller for xs */}
+      <div>
+        {/* Mobile: horizontal scroll snap */}
+        <div className="px-4 -mx-4 overflow-x-auto md:hidden scroll-smooth">
+          <div className="flex items-stretch gap-4 snap-x snap-mandatory">
+            {logos.map((logo, i) => (
+              <motion.button
+                key={logo.name}
+                variants={item}
+                whileHover={{
+                  scale: 1.035,
+                }}
+                whileTap={{ scale: 0.98 }}
                 className={cn(
-                  "group bg-card rounded-lg p-3 sm:p-4 border border-border shadow-professional",
-                  "hover:shadow-professional-md transition-all duration-300 hover:-translate-y-1",
-                  "animate-fade-in-up"
+                  "snap-start flex-shrink-0 w-[220px] sm:w-[240px] p-3 rounded-xl glass-card border border-border/60",
+                  "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+                  "transition-transform duration-300"
                 )}
-                style={{ animationDelay: `${0.5 + index * 0.05}s` }}
+                aria-label={`${logo.name} integration`}
               >
-                <div className="space-y-2 text-center sm:space-y-3">
-                  <div className="flex items-center justify-center h-10 p-2 overflow-hidden rounded-lg sm:h-12 bg-muted">
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div
+                    className="flex items-center justify-center w-full p-2 overflow-hidden rounded-lg h-14 sm:h-16 bg-muted"
+                    style={{ minHeight: 56 }}
+                  >
                     <AppImage
-                      src={marketplace.logo}
-                      alt={marketplace.logoAlt}
-                      className="object-contain w-auto h-6 transition-transform duration-300 sm:h-8 group-hover:scale-110"
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="object-contain transition-transform duration-300 max-h-10 sm:max-h-12 md:max-h-14"
                     />
                   </div>
-                  <div>
-                    <div className="text-xs font-medium text-foreground sm:text-sm">
-                      {marketplace.name}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {marketplace.status}
-                    </div>
+
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-foreground">{logo.name}</div>
+                    <div className="text-xs text-muted-foreground">Integrated</div>
                   </div>
                 </div>
-              </div>
+              </motion.button>
             ))}
           </div>
         </div>
+
+        {/* Desktop / tablet: balanced grid */}
+        <div className="hidden md:block">
+          <motion.div
+            className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 sm:gap-6"
+            role="list"
+          >
+            {logos.map((logo, i) => (
+              <motion.div
+                key={logo.name}
+                variants={item}
+                role="listitem"
+                whileHover={{
+                  scale: 1.04,
+                  // subtle two-color glow using rgba based on your theme (works in light & dark)
+                  boxShadow:
+                    '0 10px 30px rgba(59,130,246,0.08), 0 6px 18px rgba(16,185,129,0.04)',
+                }}
+                whileTap={{ scale: 0.985 }}
+                className={cn(
+                  "group p-3 rounded-lg glass-card border border-border/60",
+                  "transition-all duration-300 transform hover:-translate-y-1 focus-within:-translate-y-1"
+                )}
+                tabIndex={0}
+                aria-label={`${logo.name} integration card`}
+              >
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center justify-center w-full p-2 overflow-hidden rounded-lg h-14 bg-muted">
+                    <AppImage
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="object-contain transition-transform duration-300 max-h-10 sm:max-h-12 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <div className="text-center">
+                    <div className="text-sm font-medium text-foreground">{logo.name}</div>
+                    <div className="text-xs text-muted-foreground">{logo.status}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
 
         {/* Security Certifications */}
         <div className="mb-12 sm:mb-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
@@ -298,6 +363,4 @@ const TrustSignalsSection = () => {
 }
 
 export default TrustSignalsSection
-
-
 
