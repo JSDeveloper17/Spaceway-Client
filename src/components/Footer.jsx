@@ -248,7 +248,7 @@ const Footer = () => {
         <div className="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:py-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <p className="text-xs text-center sm:text-sm text-muted-foreground md:text-left">
-              &copy; 2025 Spaceway. All rights reserved. Build by Deepak Gupta.
+              &copy; 2025 Spaceway. All rights reserved. Build by Spaceway Tech Team.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
               <span className="text-xs sm:text-sm text-muted-foreground">

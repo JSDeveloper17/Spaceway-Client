@@ -1,10 +1,12 @@
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Float } from '@react-three/drei'
+import { motion } from "framer-motion";
 import Button from './ui/Button'
 import AppIcon from './AppIcon'
 import { cn } from '../utils/cn'
 import { Link } from 'react-router-dom'
+
 
 // 3D Floating Product Icon Component
 const FloatingProduct = ({ position, color }) => {
@@ -74,13 +76,16 @@ const HeroSection = () => {
               
               {/* Description */}
               <p className="max-w-2xl text-lg leading-relaxed sm:text-xl text-muted-foreground">
-                Centralize product listings, track competitors in real-time, and automate repricing across Amazon, Flipkart & more. 
-                Increase your turnover by using our data-driven pricing intelligence.
+                Spaceway empowers SMEs with centralized product management, real-time
+                competitor tracking, and automated pricing strategies across Amazon, Flipkart & more. 
+                
+                {/* Centralize product listings, track competitors in real-time, and automate repricing across Amazon, Flipkart & more. 
+                Increase your turnover by using our data-driven pricing intelligence. */}
               </p>
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            {/* <div className="grid grid-cols-3 gap-4 sm:gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="p-4 text-center transition-all duration-300 border rounded-lg bg-card/50 backdrop-blur-sm border-border hover:border-primary/50">
                 <div className="text-2xl font-bold sm:text-3xl text-primary">10K+</div>
                 <div className="mt-1 text-xs sm:text-sm text-muted-foreground">Active SKUs</div>
@@ -93,7 +98,30 @@ const HeroSection = () => {
                 <div className="text-2xl font-bold sm:text-3xl text-warning">24/7</div>
                 <div className="mt-1 text-xs sm:text-sm text-muted-foreground">Price Monitoring</div>
               </div>
-            </div>
+            </div> */}
+
+            {/* VALUE BULLETS */}
+            <ul className="grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                "Strategic pricing automation",
+                "Competitor intelligence engine",
+                "Turnover & profit forecasting",
+                "Enterprise-grade security",
+              ].map((text, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
+                  <div className="p-2 border rounded-md bg-card/80 border-border">
+                    <AppIcon name="checkCircle" size={16} className="text-secondary" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground">{text}</span>
+                </motion.li>
+              ))}
+            </ul>
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 sm:flex-row animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
