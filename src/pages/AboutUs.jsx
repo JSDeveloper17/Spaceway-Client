@@ -8,6 +8,9 @@ import AppIcon from '../components/AppIcon.jsx';
 import { cn } from '../utils/cn.js'; // Your existing cn
 import Aditya from "../assets/Aditya.jpg"
 import Deepak from "../assets/Deepak3.JPG"
+import Priyanshi from "../assets/Priyanshi.jpeg"
+import Mahan from "../assets/Mahan.JPG"
+import Shivraj from "../assets/Shivraj.jpeg"
 
 const teamMembers = [
   {
@@ -30,15 +33,15 @@ const teamMembers = [
     name: ' Mahaan Lal Srivastav',
     role: 'DevOps Head & Co-founder',
     description: 'Full-stack developer with expertise in distributed systems and data infrastructure',
-    image: 'https://i.pravatar.cc/400?u=priya2',
+    image: Mahan,
     linkedin: '#',
     expertise: ['FullStack Developer', 'DevOps', 'Cloud', 'Scalability'],
   },
   {
     name: 'Shivraj Singh',
     role: 'Microservices & Architecture Head',
-    description: '',
-    image: 'https://i.pravatar.cc/400?u=vikash1',
+    description: 'Expertise in Microservices & Website Architecture and Mentor',
+    image: Shivraj,
     linkedin: '#',
     expertise: ['Product Strategy', 'Microservices','System Design','Architecture ', 'Growth'],
   },
@@ -46,7 +49,7 @@ const teamMembers = [
     name: 'Priyanshi ',
     role: 'FullStack Developer',
     description: 'Full-stack architect with expertise in distributed systems',
-    image: 'https://i.pravatar.cc/400?u=sneha1',
+    image: Priyanshi,
     linkedin: '#',
     expertise: ['FullStack Developer', 'Cloud Computing', 'DevOps'],
   },
